@@ -21,10 +21,7 @@
             ctx.fillRect(0,0,canvas.width,canvas.height);
         }
         
-        let l = 2 ;
-        let c = 1 ;
-
-        let pose = 0;
+        let pose = 18;
         let quadro = 0;
         const POSES = [
             {qmax: 7, pv: 9},
@@ -54,7 +51,7 @@
         function terminouDeCarregar() {
             ctx.drawImage(skelly, 
             //sx, sy, sw, sh
-            c*64,l*64, 64, 64,
+            quadro*64,pose*64, 64, 64,
             //dx, dy, dw, dh
             0,0, 64, 64, 
             
@@ -72,7 +69,7 @@
 
             quadro = (quadro >= POSES[pose].qmax - 1) ?
              0 : quadro + POSES[pose].pv * dt;
-
+            
             ctx.drawImage(skelly, 
             //sx, sy, sw, sh
             Math.floor(quadro)*64,pose*64, 64, 64,
