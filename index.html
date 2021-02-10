@@ -12,8 +12,7 @@
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
         const skelly = new Image();
-        skelly.src = "assets/esqueleto.png";
-
+        skelly.src = "assets/sonic.png";
         skelly.addEventListener("load", terminouDeCarregar);
 
         function desenhaFundo() {
@@ -21,39 +20,24 @@
             ctx.fillRect(0,0,canvas.width,canvas.height);
         }
         
-        let pose = 18;
+        let pose = 3;
+        
         let quadro = 0;
         const POSES = [
-            {qmax: 7, pv: 9},
-            {qmax: 7, pv: 9},
-            {qmax: 7, pv: 9},
-            {qmax: 7, pv: 9},
-            {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9},
             {qmax: 9, pv: 9},
             {qmax: 9, pv: 9},
             {qmax: 9, pv: 9},
             {qmax: 9, pv: 9},
-            {qmax: 6, pv: 9},
-            {qmax: 6, pv: 9},
-            {qmax: 6, pv: 9},
-            {qmax: 6, pv: 9},
-            {qmax: 13, pv: 27},
-            {qmax: 13, pv: 27},
-            {qmax: 13, pv: 27},
-            {qmax: 13, pv: 27},
-            {qmax: 6, pv: 3}
+            {qmax: 9, pv: 9},
+            {qmax: 9, pv: 9},
         ]
-
 
         function terminouDeCarregar() {
             ctx.drawImage(skelly, 
             //sx, sy, sw, sh
-            quadro*64,pose*64, 64, 64,
+            quadro*65,pose*65, 65, 65,
             //dx, dy, dw, dh
-            0,0, 64, 64, 
+            0,0, 65, 65, 
             
             );
         }
@@ -72,9 +56,9 @@
             
             ctx.drawImage(skelly, 
             //sx, sy, sw, sh
-            Math.floor(quadro)*64,pose*64, 64, 64,
+            Math.floor(quadro)*65,pose*65, 65, 65,
             //dx, dy, dw, dh
-            0,0, 64, 64, 
+            0,0, 65, 65, 
             );
             requestAnimationFrame(passo);
             t0 = t; 
